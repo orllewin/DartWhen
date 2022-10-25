@@ -62,4 +62,13 @@ var y = when(x, {
 });
 ```
 
-**Note: adding more than one boolean branch will result in unexpexted behaviour**
+Adding more than one boolean branch will result in unexpected behaviour, if you really want to use multiple boolean branch cases you can use the alternative syntax which is less elegant:
+
+```
+when(x, [
+  {x > 700: () => print("> 700")},
+  {x > 600: () => print("> 600")},
+  {x > 500: () => print("> 500")},
+  {x > 400: () => print("> 400")},
+]);
+```
