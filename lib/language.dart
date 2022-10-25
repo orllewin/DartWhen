@@ -4,6 +4,7 @@ dynamic when<T>(T condition, Map<dynamic, dynamic> branches) {
   var consumed = false;
   dynamic returnValue;
   branches.forEach((key, value) {
+    print("Evaluating: $key: $value");
     if (consumed == false && key.runtimeType == condition.runtimeType && key == condition) {
       if (value is Function) {
         value.call();

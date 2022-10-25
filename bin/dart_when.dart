@@ -39,8 +39,9 @@ void main(List<String> arguments) {
     3: 33,
     x > 500: 0, //this should execute
     x > 550: -2, //this shouldn't
+
     Default: -1
   });
 
-  print("y: $y"); //bug: y should be 0, but is -2
+  print("y: $y"); //bug: y should be 0, but is -2 (map doesn't guarantee order...)
 }
