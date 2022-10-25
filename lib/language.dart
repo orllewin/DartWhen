@@ -13,8 +13,13 @@ dynamic when<T>(T condition, Map<dynamic, dynamic> branches) {
         consumed = true;
       }
     } else if (key.runtimeType == bool && key as bool == true) {
-      value.call();
-      consumed = true;
+      if (value is Function) {
+        value.call();
+        consumed = true;
+      } else {
+        returnValue = value;
+        consumed = true;
+      }
     }
   });
 
