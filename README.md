@@ -43,7 +43,7 @@ Dart's switch can't currently be used as an expression, DartWhen can though:
 
 ```
 var y = when(x, {
-  1: 11, //
+  1: 11,
   2: 22,
   3: 33,
   Default: -1
@@ -52,7 +52,7 @@ var y = when(x, {
 
 ## Boolean cases
 
-DartWhen also allows you to include boolean expressions as cases:
+DartWhen also allows you to include boolean expressions as branch cases:
 
 ```
 var y = when(x, {
