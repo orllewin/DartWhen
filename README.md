@@ -9,8 +9,6 @@ Probably a bad idea but I miss Kotlin's `when` statement/expression and I'm not 
 Dart's current Switch statement is identical to Java's:
 
 ```
-var x = 3;
-
 switch (x) {
   case 1:
     print("is 1");
