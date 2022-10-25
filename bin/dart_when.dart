@@ -19,7 +19,12 @@ void main(List<String> arguments) {
       print("default - no match");
   }
 
-  when(x, {1: () => print("is 1"), 2: () => print("is 2"), 3: () => print("is 3"), Default: () => print("default - no match")});
+  when(x, {
+    1: () => print("is 1"), //
+    2: () => print("is 2"),
+    3: () => print("is 3"),
+    Default: () => print("default - no match")
+  });
 
   when(x, {
     1: () => print("is 1"),
@@ -28,8 +33,7 @@ void main(List<String> arguments) {
       print("is 3");
       print("Code block");
     },
-    x > 500: () => print("> 500"), //this should execute
-    x > 550: () => print("> 550"), //this shouldn't
+    x > 500: () => print("> 500"),
     Default: () => print("default - no match")
   });
 
@@ -37,11 +41,9 @@ void main(List<String> arguments) {
     1: 11, //
     2: 22,
     3: 33,
-    x > 500: 0, //this should execute
-    x > 550: -2, //this shouldn't
-
+    x > 500: 0,
     Default: -1
   });
 
-  print("y: $y"); //bug: y should be 0, but is -2 (map doesn't guarantee order...)
+  print("y: $y");
 }
