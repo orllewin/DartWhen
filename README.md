@@ -48,18 +48,18 @@ var y = when(x, {
 });
 ```
 
-## Boolean cases
+## Boolean branch case
 
-DartWhen also allows you to include boolean expressions as branch cases:
+DartWhen also allows you to include a boolean expression as a branch case:
 
 ```
 var y = when(x, {
-  x == null: 0
   1: 11,
   2: 22,
   3: 33,
   x < 10: 44,
-  x < 50: 55,
   Default: -1
 });
 ```
+
+**Note: adding more than one boolean branch will result in unexpexted behaviour**
