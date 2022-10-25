@@ -2,7 +2,7 @@
 
 Probably a bad idea but I miss Kotlin's `when` statement/expression and I'm not satisfied with only having Dart's `if` and `switch`, they feel old fashioned and not very expressive. There's is a [proposal in Dart to extend the Switch statement to become an expression](https://github.com/dart-lang/language/issues/703#issuecomment-1262975719) which will improve things massively but it's not here yet.
 
-**Note: I have no idea what I'm doing and I'm very new to Dart**
+**Note: I have no idea what I'm doing and I'm very new to Dart. This was knocked together in an hour or two, there will be bugs, I need to write tests**
 
 ## Dart's Switch
 
