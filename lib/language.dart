@@ -4,7 +4,7 @@ dynamic when<T>(T condition, Map<dynamic, dynamic> branches) {
   var consumed = false;
   dynamic returnValue;
   branches.forEach((key, value) {
-    if (key.runtimeType == condition.runtimeType && key == condition) {
+    if (consumed == false && key.runtimeType == condition.runtimeType && key == condition) {
       if (value is Function) {
         value.call();
         consumed = true;
@@ -12,7 +12,7 @@ dynamic when<T>(T condition, Map<dynamic, dynamic> branches) {
         returnValue = value;
         consumed = true;
       }
-    } else if (key.runtimeType == bool && key as bool == true) {
+    } else if (consumed == false && key.runtimeType == bool && key as bool == true) {
       if (value is Function) {
         value.call();
         consumed = true;
