@@ -28,7 +28,8 @@ void main(List<String> arguments) {
       print("is 3");
       print("Code block");
     },
-    x > 500: () => print("> 500"),
+    x > 500: () => print("> 500"), //this should execute
+    x > 550: () => print("> 550"), //this shouldn't
     Default: () => print("default - no match")
   });
 
@@ -36,9 +37,10 @@ void main(List<String> arguments) {
     1: 11, //
     2: 22,
     3: 33,
-    x > 500: 0,
+    x > 500: 0, //this should execute
+    x > 550: -2, //this shouldn't
     Default: -1
   });
 
-  print("y: $y");
+  print("y: $y"); //bug: y should be 0, but is -2
 }
