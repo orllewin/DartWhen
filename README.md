@@ -39,7 +39,7 @@ when(x, {
 
 ## Expression
 
-Dart's switch can't current be used as an expression, DartWhen can though:
+Dart's switch can't currently be used as an expression, DartWhen can though:
 
 ```
 var y = when(x, {
