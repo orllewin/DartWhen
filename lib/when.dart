@@ -1,4 +1,4 @@
-class Default {}
+class Else {}
 
 dynamic when<T>(T condition, dynamic branches) {
   if (branches is List) {
@@ -41,7 +41,7 @@ dynamic whenList<T>(T condition, List<dynamic> branches) {
   if (consumed) {
     return returnValue;
   } else {
-    if (branches.last.key == Default) {
+    if (branches.last.key == Else) {
       branches.last.value.call();
     }
   }
@@ -74,8 +74,8 @@ dynamic whenMap<T>(T condition, Map<dynamic, dynamic> branches) {
   if (consumed) {
     return returnValue;
   } else {
-    if (branches.containsKey(Default)) {
-      branches[Default].call();
+    if (branches.containsKey(Else)) {
+      branches[Else].call();
     }
   }
 }

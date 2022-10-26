@@ -30,7 +30,7 @@ Future<Stations?> _fetchStations() async {
 
   Stations? stations = when(response.statusCode, {
     200: Stations.fromJson(jsonDecode(response.body)), //
-    Default: () => snack("Error loading stations feed")
+    Else: () => snack("Error loading stations feed")
   });
 
   return stations;
@@ -66,7 +66,7 @@ when(x, {
   1: () => print("is 1"),
   2: () => print("is 2"),
   3: () => print("is 3"),
-  Default: () => print("default - no match")
+  Else: () => print("default - no match")
 });
 ```
 
@@ -79,7 +79,7 @@ var y = when(x, {
   1: 11,
   2: 22,
   3: 33,
-  Default: -1
+  Else: -1
 });
 ```
 
@@ -93,7 +93,7 @@ var y = when(x, {
   2: 22,
   3: 33,
   x < 10: 44,
-  Default: -1
+  Else: -1
 });
 ```
 
