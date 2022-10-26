@@ -37,6 +37,8 @@ Future<Stations?> _fetchStations() async {
 }
 ```
 
+__Note the double slash `//` - this tricks Dart Format and prevents it folding the `when` block into a single line__
+
 ## Dart's Switch
 
 Dart's current Switch statement is identical to Java's:
@@ -102,6 +104,6 @@ when(x, [
   {x > 700: () => print("> 700")},
   {x > 600: () => print("> 600")},
   {x > 500: () => print("> 500")},
-  {x > 400: () => print("> 400")},
+  {x > 400: () => print("> 400")}
 ]);
 ```
