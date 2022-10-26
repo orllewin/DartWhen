@@ -62,7 +62,7 @@ var y = when(x, {
 });
 ```
 
-Adding more than one boolean branch will result in unexpected behaviour, if you really want to use multiple boolean branch cases you can use the alternative syntax which is less elegant:
+Adding more than one boolean branch will result in unexpected behaviour, if you want to use multiple boolean branch cases you can use the alternative syntax which is less elegant:
 
 ```
 when(x, [
