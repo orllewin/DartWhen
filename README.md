@@ -1,6 +1,6 @@
 # DartWhen
 
-Probably a bad idea but I miss Kotlin's `when` statement/expression and I'm not satisfied with only having Dart's `if` and `switch`. There's is a [proposal in Dart to extend the Switch statement to become an expression](https://github.com/dart-lang/language/issues/703#issuecomment-1262975719) which will improve things massively but it's not here yet.
+Probably a bad idea but I miss Kotlin's `when` statement/expression and I'm not satisfied with only having Dart's `if` and `switch`. There's is a [proposal in Dart to extend the Switch statement to become an expression](https://github.com/dart-lang/language/issues/703#issuecomment-1262975719) (see [Patterns Feature Specification](https://github.com/dart-lang/language/blob/master/working/0546-patterns/patterns-feature-specification.md)) which will improve things massively but it's not here yet.
 
 **Warning: This was knocked together in an hour or two then refined a little, I can't vouch for its safety or correctness**
 
