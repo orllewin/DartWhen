@@ -6,7 +6,7 @@ dynamic when<T>(T condition, dynamic branches) {
   } else if (branches is Map) {
     return whenMap(condition, branches);
   } else {
-    throw Exception("when only supports List and Map branches, found type: ${branches.runtimeType}");
+    throw Exception("Unsupported branch type: ${branches.runtimeType} - when only supports List and Map branches");
   }
 }
 
@@ -18,7 +18,7 @@ dynamic whenList<T>(T condition, List<dynamic> branches) {
     if (element is Map) {
       var key = element.entries.first.key;
       var value = element.entries.first.value;
-      if (consumed == false && key.runtimeType == condition.runtimeType && key == condition) {
+      if (!consumed && key.runtimeType == condition.runtimeType && key == condition) {
         if (value is Function) {
           value.call();
           consumed = true;
@@ -26,7 +26,7 @@ dynamic whenList<T>(T condition, List<dynamic> branches) {
           returnValue = value;
           consumed = true;
         }
-      } else if (consumed == false && key.runtimeType == bool && key as bool == true) {
+      } else if (!consumed && key.runtimeType == bool && key as bool == true) {
         if (value is Function) {
           value.call();
           consumed = true;
@@ -52,7 +52,7 @@ dynamic whenMap<T>(T condition, Map<dynamic, dynamic> branches) {
   dynamic returnValue;
 
   branches.forEach((key, value) {
-    if (consumed == false && key.runtimeType == condition.runtimeType && key == condition) {
+    if (!consumed && key.runtimeType == condition.runtimeType && key == condition) {
       if (value is Function) {
         value.call();
         consumed = true;
@@ -60,7 +60,7 @@ dynamic whenMap<T>(T condition, Map<dynamic, dynamic> branches) {
         returnValue = value;
         consumed = true;
       }
-    } else if (consumed == false && key.runtimeType == bool && key as bool == true) {
+    } else if (!consumed && key.runtimeType == bool && key as bool == true) {
       if (value is Function) {
         value.call();
         consumed = true;
