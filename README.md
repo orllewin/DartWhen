@@ -4,6 +4,39 @@ Probably a bad idea but I miss Kotlin's `when` statement/expression and I'm not 
 
 **Note: I have no idea what I'm doing and I'm very new to Dart. This was knocked together in an hour or two, there will be bugs, I need to write tests**
 
+## Usage
+
+You can add `when` to your project using this repo as a [git package dependency](https://dart.dev/tools/pub/dependencies#git-packages):
+
+* Add the repo as a dependency to `pubspec.yaml`:
+
+```
+dependencies:
+  dart_when:
+    git: https://github.com/orllewin/DartWhen.git
+```
+
+* Then import:
+
+```
+import 'package:dart_when/when.dart';
+```
+
+* and use, eg:
+
+```
+Future<Stations?> _fetchStations() async {
+  final response = await http.get(Uri.https('orllewin.uk', 'stations.json'));
+
+  Stations? stations = when(response.statusCode, {
+    200: Stations.fromJson(jsonDecode(response.body)), //
+    Default: () => snack("Error loading stations feed")
+  });
+
+  return stations;
+}
+```
+
 ## Dart's Switch
 
 Dart's current Switch statement is identical to Java's:
