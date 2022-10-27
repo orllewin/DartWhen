@@ -107,3 +107,5 @@ when(x, [
   {x > 400: () => print("> 400")}
 ]);
 ```
+
+(`when` is overloaded, the default implementation uses a `Map` with the tidier syntax in the other examples; the supplied condition is matched against the key entries, obviously with true/false keys that would be a problem with multiple boolean branches. Having a second overload backed by a `List` allows the branches to be iterated sequentially instead).
